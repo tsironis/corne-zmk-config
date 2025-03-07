@@ -16,7 +16,16 @@
 #define ARROWS_L  2
 #define NUMBERS_L 3
 
+&led_strip {
+  chain-length = <27>;
+  // 21 backlight + 6 glowlight
+};
+
 / {
+    chosen {
+        zmk,backlight = &backlight;
+    };
+
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
